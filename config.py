@@ -13,17 +13,17 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
-LOGGER_ID = int(getenv("LOGGER_ID", "-1001631416406"))
+LOGGER_ID = int(getenv("LOGGER_ID", "-1001845749326"))
 
-BOT_NAME = getenv("BOT_NAME", "ALISHA MUSIC")
+BOT_NAME = getenv("BOT_NAME", "ATIYA MUSIC")
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "5441658106").split())
+    map(int, getenv("OWNER_ID", "5210727648").split())
 )
     
 SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/Alisha_Support ")
+    "SUPPORT_CHANNEL", "https://t.me/frienddd_zonee")
 SUPPORT_GROUP = getenv(
-    "SUPPORT_GROUP", "https://t.me/Sad_shayari_lovers")
+    "SUPPORT_GROUP", "https://t.me/frienddd_zonee")
 
 DURATION_LIMIT_MIN = int(
     getenv("DURATION_LIMIT", "900")
@@ -38,7 +38,7 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/Team-Alisha/Alisha",
+    "https://github.com/RocksKrishnaBot/AtiyaMusic",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 
@@ -96,11 +96,11 @@ clean = {}
 
 autoclean = []
 
-START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/e320ba0abe214c0e14042.jpg")
+START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/2ac6f260c40c47fd9efb2.jpg")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "https://telegra.ph//file/3d677a2240de49ea9a424.jpg",
+    "https://telegra.ph/file/242a9fb6db6f204e33b33.jpg",
 )
 
 PLAYLIST_IMG_URL = "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg"

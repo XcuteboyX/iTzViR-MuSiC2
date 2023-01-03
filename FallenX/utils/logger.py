@@ -12,15 +12,21 @@ async def play_logs(message, streamtype):
         logger_text = f"""
 **{BOT_NAME} ᴩʟᴀʏ ʟᴏɢɢᴇʀ**
 
-**ᴄʜᴀᴛ:** {message.chat.title} [`{message.chat.id}`]
-**ᴜsᴇʀ:** {message.from_user.mention}
-**ᴜsᴇʀɴᴀᴍᴇ:** @{message.from_user.username}
-**ɪᴅ:** `{message.from_user.id}`
-**ᴄʜᴀᴛ ʟɪɴᴋ:** {chatusername}
-
-**sᴇᴀʀᴄʜᴇᴅ ғᴏʀ:** {message.text}
-
-**sᴛʀᴇᴀᴍ ᴛʏᴩᴇ:** {streamtype}"""
+**━━━━━━━━━━━━━━━**
+**😇 Cʜᴀᴛ Nᴀᴍᴇ : >** {message.chat.title} [`{message.chat.id}`]
+**━━━━━━━━━━━━━━━**
+**😘 Nᴀᴍᴇ : ›** {message.from_user.mention}
+**━━━━━━━━━━━━━━━**
+**😛 Usᴇʀɴᴀᴍᴇ : ›** @{message.from_user.username}
+**━━━━━━━━━━━━━━━**
+**😁 Iᴅ : ›** `{message.from_user.id}`
+**━━━━━━━━━━━━━━━**
+**🥴 Cʜᴀᴛ Lɪɴᴋ : >** {chatusername}
+**━━━━━━━━━━━━━━━**
+**🤫 Sᴇᴀʀᴄʜᴇᴅ Fᴏʀ :** {message.text}
+**━━━━━━━━━━━━━━━**
+**🥴 Sᴛʀᴇᴀᴍ Tʏᴘᴇ :** {streamtype}
+**━━━━━━━━━━━━━━━**"""
         if message.chat.id != LOGGER_ID:
             try:
                 await app.send_message(

@@ -125,10 +125,10 @@ async def gen_thumb(videoid, user_id):
         try:
             draw.text(
                 (450, 25),
-                f"ATIYA PLAYING",
+                f"STARTED PLAYING",
                 fill="white",
-                stroke_width=2,
-                stroke_fill="black",
+                stroke_width=3,
+                stroke_fill="grey",
                 font=font,
             )
             if para[0]:
@@ -138,7 +138,7 @@ async def gen_thumb(videoid, user_id):
                     f"{para[0]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="black",
+                    stroke_fill="white",
                     font=font,
                 )
             if para[1]:
@@ -148,7 +148,7 @@ async def gen_thumb(videoid, user_id):
                     f"{para[1]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="black",
+                    stroke_fill="white",
                     font=font,
                 )
         except:
@@ -278,7 +278,7 @@ async def gen_qthumb(videoid, user_id):
                     f"{para[0]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="yellow",
+                    stroke_fill="white",
                     font=font,
                 )
             if para[1]:
@@ -288,7 +288,7 @@ async def gen_qthumb(videoid, user_id):
                     f"{para[1]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="yellow",
+                    stroke_fill="white",
                     font=font,
                 )
         except:

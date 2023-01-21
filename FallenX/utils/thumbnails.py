@@ -222,7 +222,7 @@ async def gen_qthumb(videoid, user_id):
         x = f.resize((107, 107))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"FallenX/assets/test.png","FallenX/assets/test1.png","FallenX/assets/test2.png")
+        bg = Image.open(f["FallenX/assets/test.png","FallenX/assets/test1.png","FallenX/assets/test2.png","FallenX/assets/test3.png"])
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(30))

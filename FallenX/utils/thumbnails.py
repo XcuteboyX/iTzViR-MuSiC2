@@ -1,15 +1,16 @@
 import os
 import re
 import textwrap
-import random 
+
 import aiofiles
 import aiohttp
 import numpy as np
+
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from youtubesearchpython.__future__ import VideosSearch
+
 from config import YOUTUBE_IMG_URL
 from FallenX import app
-from assets import boobs
 
 
 def changeImageSize(maxWidth, maxHeight, image):
@@ -31,7 +32,8 @@ def add_corners(im):
 
 
 async def gen_thumb(videoid, user_id):
-    fuck = random.choice(boobs)
+    if os.path.isfile(f"cache/{videoid}_{user_id}.png"):
+        return f"cache/{videoid}_{user_id}.png"
     url = f"https://www.youtube.com/watch?v={videoid}"
     try:
         results = VideosSearch(url, limit=1)
@@ -80,7 +82,7 @@ async def gen_thumb(videoid, user_id):
         x = f.resize((107, 107))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"assets/{fuck}.png")
+        bg = Image.open(f"FallenX/assets/test.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(30))
@@ -110,16 +112,15 @@ async def gen_thumb(videoid, user_id):
         logo.thumbnail((365, 365), Image.ANTIALIAS)
         width = int((1280 - 365) / 2)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 136), mask=logo)
-        circle = Image.open("assets/anonx.png")
-        background.paste(x, (710, 427), mask = x)
-        background.paste(circle, (0, 0), mask = circle)
-        
+        background.paste(logo, (width + 2, 138), mask=logo)
+        background.paste(x, (710, 427), mask=x)
+        background.paste(image3, (0, 0), mask=image3)
+
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("assets/font2.ttf", 45)
-        ImageFont.truetype("assets/font2.ttf", 70)
-        arial = ImageFont.truetype("assets/font2.ttf", 30)
-        ImageFont.truetype("assets/font.ttf", 30)
+        font = ImageFont.truetype("FallenX/assets/font2.ttf", 45)
+        ImageFont.truetype("FallenX/assets/font2.ttf", 70)
+        arial = ImageFont.truetype("FallenX/assets/font2.ttf", 30)
+        ImageFont.truetype("FallenX/assets/font.ttf", 30)
         para = textwrap.wrap(title, width=32)
         try:
             draw.text(
@@ -164,14 +165,15 @@ async def gen_thumb(videoid, user_id):
         except:
             pass
         background.save(f"cache/{videoid}_{user_id}.png")
-        return f"cache/{videoid}_{fuck}.png"
+        return f"cache/{videoid}_{user_id}.png"
     except Exception as e:
         print(e)
         return YOUTUBE_IMG_URL
 
 
 async def gen_qthumb(videoid, user_id):
-    fuck = random.choice(boobs)
+    if os.path.isfile(f"cache/que{videoid}_{user_id}.png"):
+        return f"cache/que{videoid}_{user_id}.png"
     url = f"https://www.youtube.com/watch?v={videoid}"
     try:
         results = VideosSearch(url, limit=1)
@@ -220,12 +222,12 @@ async def gen_qthumb(videoid, user_id):
         x = f.resize((107, 107))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"assets/{fuck}.png")
+        bg = Image.open(f"FallenX/assets/test.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(50))
+        background = image2.filter(filter=ImageFilter.BoxBlur(30))
         enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(0.8)
+        background = enhancer.enhance(0.6)
 
         image3 = changeImageSize(1280, 720, bg)
         image5 = image3.convert("RGBA")
@@ -250,16 +252,15 @@ async def gen_qthumb(videoid, user_id):
         logo.thumbnail((365, 365), Image.ANTIALIAS)
         width = int((1280 - 365) / 2)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 136), mask=logo)
-        circle = Image.open("assets/anonx.png")
-        background.paste(x, (710, 427), mask = x)
-        background.paste(circle, (0, 0), mask = circle)
+        background.paste(logo, (width + 2, 138), mask=logo)
+        background.paste(x, (710, 427), mask=x)
+        background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("assets/font2.ttf", 45)
-        ImageFont.truetype("assets/font2.ttf", 70)
-        arial = ImageFont.truetype("assets/font2.ttf", 30)
-        ImageFont.truetype("assets/font.ttf", 30)
+        font = ImageFont.truetype("FallenX/assets/font2.ttf", 45)
+        ImageFont.truetype("FallenX/assets/font2.ttf", 70)
+        arial = ImageFont.truetype("FallenX/assets/font2.ttf", 30)
+        ImageFont.truetype("FallenX/assets/font.ttf", 30)
         para = textwrap.wrap(title, width=32)
         try:
             draw.text(
@@ -304,8 +305,9 @@ async def gen_qthumb(videoid, user_id):
             os.remove(f"cache/thumb{videoid}.png")
         except:
             pass
-        background.save(f"cache/{videoid}_{fuck}.png")
-        return f"cache/{videoid}_{fuck}.png"
+        file = f"cache/que{videoid}_{user_id}.png"
+        background.save(f"cache/que{videoid}_{user_id}.png")
+        return f"cache/que{videoid}_{user_id}.png"
     except Exception as e:
         print(e)
         return YOUTUBE_IMG_URL

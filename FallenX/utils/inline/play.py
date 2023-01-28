@@ -64,7 +64,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 text=" ᴏᴡɴᴇʀ ", url=f"https://t.me/ITZVIR99"
             ),
             InlineKeyboardButton(
-                text="Rocks ᴄʜᴀᴛ ", url=f"https://t.me/Shayri_Music_Lovers"
+                text=" ᴊᴏɪɴ ʜᴇʀᴇ ", url=f"https://t.me/Shayri_Music_Lovers"
             ),
         ],
         [
@@ -129,7 +129,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 text=" ᴏᴡɴᴇʀ ", url=f"https://t.me/ITZVIR99"
             ),
             InlineKeyboardButton(
-                text="Rocks ᴄʜᴀᴛ ", url=f"https://t.me/Shayri_Music_Lovers"
+                text=" ᴊᴏɪɴ ʜᴇʀᴇ", url=f"https://t.me/Shayri_Music_Lovers"
             ),
         ],
         [

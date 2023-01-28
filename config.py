@@ -13,7 +13,7 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
-LOGGER_ID = int(getenv("LOGGER_ID", "-1001845749326"))
+LOGGER_ID = int(getenv("LOGGER_ID", "-1001672066567"))
 
 BOT_NAME = getenv("BOT_NAME", "˹ᴧᴛɪʏᴀ ꭙ ᴍᴜsɪᴄ˼")
 OWNER_ID = list(

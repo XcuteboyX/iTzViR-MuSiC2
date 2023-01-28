@@ -61,7 +61,15 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text="✯ ᴄʟᴏsᴇ ✯", callback_data=f"ADMIN CloseA|{chat_id}"
+                text=" ᴏᴡɴᴇʀ 💞", url=f"https://t.me/ITZVIR99"
+            ),
+            InlineKeyboardButton(
+                text="Rocks ᴄʜᴀᴛ 💌", url=f"https://t.me/Shayri_Music_Lovers"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data=f"ADMIN Close|{chat_id}"
             )
         ],
     ]
